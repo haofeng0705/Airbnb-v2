@@ -8,7 +8,7 @@
    * @default 80
    * @type {number}
    */
-  printWidth: 60,
+  printWidth: 80,
   /**
    * 缩进的空格数量
    * @default 2
