@@ -4,9 +4,11 @@ import { FieldValues, set } from 'react-hook-form'
 import { useMemo, useState } from 'react'
 
 import CategoryInput from '../inputs/CategoryInput'
+import CountrySelect from '../inputs/CountrySelect'
 import Heading from '../Heading'
 import Modal from './Modal'
 import { categories } from '../navbar/Categories'
+import dynamic from 'next/dynamic'
 import { useForm } from 'react-hook-form'
 import useRentModal from '@/app/hooks/useRentModal'
 
@@ -43,13 +45,18 @@ const RentModal = () => {
       description: ''
     }
   })
-
+  // 保证 next back 后表单值不变
   const location = watch('location')
   const category = watch('category')
   const guestCount = watch('guestCount')
   const roomCount = watch('roomCount')
   const bathroomCount = watch('bathroomCount')
   const imageSrc = watch('imageSrc')
+
+  // 动态加载, location 改变就要 rerender Map, 效果:当选中某个国家的时候重新渲染 map
+  const Map = useMemo(() => dynamic(() => import('../Map'), {
+    ssr: false
+  }), [location]);
 
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
@@ -58,7 +65,7 @@ const RentModal = () => {
       shouldValidate: true
     })
   }
-
+  // 控制 step
   const onBack = () => {
     setStep((value) => value - 1)
   }
@@ -108,7 +115,7 @@ const RentModal = () => {
           >
             <CategoryInput
               onClick={(category) => {
-                console.log('category->',category)
+                console.log('category->', category)
                 return setCustomValue('category', category)
               }}
               selected={category === item.label}
@@ -121,12 +128,28 @@ const RentModal = () => {
     </div>
   )
 
+  if (step === STEPS.LOCATION) {
+    bodyContent = (
+      <div className='flex flex-col gap-8'>
+        <Heading
+          title='Where is your place located?'
+          subtitle='Help guests find you!'
+        />
+        <CountrySelect
+          value={location}
+          onChange={(value) => setCustomValue('location', value)}
+        />
+        <Map center={location?.latlng} />
+      </div>
+    )
+  }
+
   return (
     <Modal
       isOpen={rentModal.isOpen}
       title='Airbnb your home'
       onClose={rentModal.onClose}
-      onSubmit={rentModal.onClose}
+      onSubmit={onNext}
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
