@@ -9,6 +9,7 @@ const Logo = () => {
   return (
     <>
       <Image
+        // 点击回首页
         onClick={() => router.push('/')}
         className='hidden md:block cursor-pointer'
         src='/images/logo.png'
