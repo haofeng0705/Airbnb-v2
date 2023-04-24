@@ -27,11 +27,12 @@ export default async function getCurrentUser() {
     }
 
     return {
-      // ...currentUser,
-      // createdAt: currentUser.createdAt.toISOString(),
-      // updatedAt: currentUser.updatedAt.toISOString(),
-      // emailVerified: currentUser.emailVerified?.toISOString() || null
-      currentUser
+      ...currentUser,
+      // 解决报错: Only plain object can be passd to Clinet components
+      createdAt: currentUser.createdAt.toISOString(),
+      updatedAt: currentUser.updatedAt.toISOString(),
+      emailVerified: currentUser.emailVerified?.toISOString() || null
+      // currentUser
     }
   } catch (error: any) {
     return null
