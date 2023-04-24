@@ -5,8 +5,11 @@ import { useCallback, useState } from 'react'
 import MenuItem from './MenuItem'
 import useRegisterModal from '@/app/hooks/useRegisterModal'
 import useLoginModal from '@/app/hooks/useLoginModal'
-import { SafeUser } from "@/app/types";
+import { SafeUser } from '@/app/types'
 import { signOut } from 'next-auth/react'
+import LoginModal from '../Modals/LoginModal'
+import toast from 'react-hot-toast'
+
 
 interface UserMenuProps {
   currentUser?: SafeUser | null
@@ -20,11 +23,26 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
     setIsOpen((value) => !value)
   }, [])
 
+
+  const onRent = useCallback(() => {
+    // 跳转登录页面, 并提示
+    if (!currentUser) {
+      toast('Login First !', {
+        duration: 1000,
+        // Custom Icon
+        icon: '👏',
+      });
+      return loginModal.onOpen()
+    }
+
+    // 跳转 rent 界面
+
+  }, [currentUser, loginModal])
   return (
     <div className='relative'>
       <div className='flex flex-row items-center gap-3'>
         <div
-          onClick={() => {}}
+          onClick={onRent}
           className='
           hidden
           md:block
