@@ -2,7 +2,7 @@
  * @see https://prettier.io/docs/en/options.html#print-width
  * @author lcm
  */
- module.exports = {
+module.exports = {
   /**
    * 换行宽度，当代码宽度达到多少时换行
    * @default 80
@@ -38,7 +38,7 @@
    * @default "as-needed"
    * @type {"as-needed"|"consistent"|"preserve"}
    */
-  quoteProps: "as-needed",
+  quoteProps: 'as-needed',
   /**
    * jsx中是否使用单引号替代双引号
    * @default false
@@ -55,7 +55,7 @@
    * @default "es5"
    * @type {"es5"|"none"|"all"}
    */
-  trailingComma: "none",
+  trailingComma: 'none',
   /**
    * 在对象，数组括号与文字之间加空格 "{ foo: bar }"
    * @default true
@@ -73,13 +73,13 @@
    * @default "always"
    * @type {"always"|"avoid"}
    */
-  arrowParens: "always",
+  arrowParens: 'always',
   /**
    * 为HTML、Vue、Angular和Handlebars指定全局空格敏感性
    * @default "css"
    * @type {"css"|"strict"|"ignore"}
    */
-  htmlWhitespaceSensitivity: "ignore",
+  htmlWhitespaceSensitivity: 'ignore',
   /**
    * 是否缩进Vue文件中的<script>和<style>标记内的代码。有些人(比如Vue的创建者)不使用缩进来保存缩进级别，但这可能会破坏编辑器中的代码折叠。
    * @default "always"
@@ -91,11 +91,11 @@
    * @default "lf"
    * @type {"lf"|"crlf"|"cr"|"auto"}
    */
-  endOfLine: "crlf",
+  endOfLine: 'crlf',
   /**
    * 因为使用了一些折行敏感型的渲染器（如GitHub comment）而按照markdown文本样式进行折行
    */
-  proseWrap: "always",
+  proseWrap: 'always',
   // 是否使用根目录下的EditorConfig配置文件
   useEditorConfig: false,
   /**
@@ -104,5 +104,14 @@
    * @type {boolean}
    */
   singleAttributePerLine: true,
-  disableLanguages: ["html"],
-};
+  disableLanguages: ['html'],
+  importOrder: [
+    '^react(.*)',
+    'antd/(.*)',
+    '<THIRD_PARTY_MODULES>',
+    '@/(.*)',
+    '^[./]'
+  ],
+  importOrderSeparation: true
+}
+

@@ -6,6 +6,7 @@ import { Nunito } from 'next/font/google'
 import ToasterProvider from './providers/ToasterProvider'
 import LoginModal from './components/Modals/LoginModal'
 import getCurrentUser from './actions/getCurrntUser'
+import RentModal from './components/Modals/RentModal'
 
 export const metadata = {
   title: 'Airbnb',
@@ -27,6 +28,7 @@ export default async function RootLayout({
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />
+          <RentModal />
           <LoginModal />
           <RegisterModal />
           <NavBar currentUser={currentUser} />

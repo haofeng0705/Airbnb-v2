@@ -5,11 +5,11 @@ import { useCallback, useState } from 'react'
 import MenuItem from './MenuItem'
 import useRegisterModal from '@/app/hooks/useRegisterModal'
 import useLoginModal from '@/app/hooks/useLoginModal'
+import useRentModal from '@/app/hooks/useRentModal'
 import { SafeUser } from '@/app/types'
 import { signOut } from 'next-auth/react'
 import LoginModal from '../Modals/LoginModal'
 import toast from 'react-hot-toast'
-
 
 interface UserMenuProps {
   currentUser?: SafeUser | null
@@ -18,26 +18,27 @@ interface UserMenuProps {
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal()
   const loginModal = useLoginModal()
+  const rentModal = useRentModal()
   const [isOpen, setIsOpen] = useState(false)
   const toggleOpen = useCallback(() => {
     setIsOpen((value) => !value)
   }, [])
 
-
   const onRent = useCallback(() => {
     // 跳转登录页面, 并提示
     if (!currentUser) {
+      // 提示信息
       toast('Login First !', {
         duration: 1000,
         // Custom Icon
-        icon: '👏',
-      });
+        icon: '👏'
+      })
       return loginModal.onOpen()
     }
 
     // 跳转 rent 界面
-
-  }, [currentUser, loginModal])
+    rentModal.onOpen()
+  }, [currentUser, loginModal, rentModal])
   return (
     <div className='relative'>
       <div className='flex flex-row items-center gap-3'>
@@ -114,8 +115,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   onClick={() => {}}
                 />
                 <MenuItem
-                  label='Airbnb your home'
-                  onClick={() => {}}
+                  label='Airbnb my home'
+                  onClick={rentModal.onOpen}
                 />
                 <hr />
                 <MenuItem
