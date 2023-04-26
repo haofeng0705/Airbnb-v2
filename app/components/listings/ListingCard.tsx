@@ -51,6 +51,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
 
   // price it doesn't have to be recalculated unless a dependency changes.
   const price = useMemo(() => {
+    // 如果传入了 reservation, 则使用 reservation 的 totalPrice
     if (reservation) {
       return reservation.totalPrice
     }
