@@ -1,19 +1,19 @@
 'use client'
 
 import { Listing, Reservation } from '@prisma/client'
+import { SafeListing, SafeUser } from '@/app/types'
 import { useCallback, useMemo } from 'react'
 
 import Button from '../Button'
 import HeartButton from '../HeartButton'
 import Image from 'next/image'
-import { SafeUser } from '@/app/types'
 import { format } from 'date-fns'
 import useCountries from '@/app/hooks/useCountries'
 import { useRouter } from 'next/navigation'
 
 // 可复用组件
 interface ListingCardProps {
-  data: Listing
+  data: SafeListing
   reservation?: Reservation
   onAction?: (id: string) => void
   disabled?: boolean
