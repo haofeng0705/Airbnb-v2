@@ -33,7 +33,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
       }}
     >
       {({ open }) => {
-        function handleOnClick(e) {
+        function handleOnClick(e: { preventDefault: () => void }) {
           e.preventDefault()
           open()
         }
