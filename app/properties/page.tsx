@@ -1,8 +1,8 @@
-import ClientOnly from '../ClientOnly'
-import EmptyState from '../components/EmptyState'
+import ClientOnly from '@/app/components/ClientOnly'
+import EmptyState from '@/app/components/EmptyState'
 import PropertiesClient from './PropertiesClient'
-import getCurrentUser from '../actions/getCurrntUser'
-import getListings from '../actions/getListings'
+import getCurrentUser from '@/app/actions/getCurrentUser'
+import getListings from '@/app/actions/getListings'
 
 const PropertiesPage = async () => {
   const currentUser = await getCurrentUser()

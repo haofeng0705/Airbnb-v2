@@ -8,9 +8,8 @@ export async function getSession() {
 
 export default async function getCurrentUser() {
   try {
-    //获取 session
     const session = await getSession()
-    //不存在 session
+
     if (!session?.user?.email) {
       return null
     }
@@ -27,12 +26,10 @@ export default async function getCurrentUser() {
 
     return {
       ...currentUser,
-      // 解决报错: Only plain object can be passd to Clinet components(date)
       createdAt: currentUser.createdAt.toISOString(),
       updatedAt: currentUser.updatedAt.toISOString(),
       emailVerified: currentUser.emailVerified?.toISOString() || null
     }
-    // return currentUser
   } catch (error: any) {
     return null
   }

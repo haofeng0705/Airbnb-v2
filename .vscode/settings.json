@@ -7,8 +7,6 @@
   },
   "files.exclude": {
     ".husky": true,
-    ".next": true,
-    ".vscode": true,
     "node_modules": true
   },
   "tailwindCSS.files.exclude": ["**/.git/**", "**/.hg/**", "**/.svn/**"]

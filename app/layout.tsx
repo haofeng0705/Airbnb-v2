@@ -1,6 +1,6 @@
 import './globals.css'
 
-import ClientOnly from './ClientOnly'
+import ClientOnly from './components/ClientOnly'
 import LoginModal from './components/Modals/LoginModal'
 import NavBar from './components/navbar/Navbar'
 import { Nunito } from 'next/font/google'
@@ -8,7 +8,7 @@ import RegisterModal from './components/Modals/RegisterModal'
 import RentModal from './components/Modals/RentModal'
 import SearchModal from './components/Modals/SearchModal'
 import ToasterProvider from './providers/ToasterProvider'
-import getCurrentUser from './actions/getCurrntUser'
+import getCurrentUser from './actions/getCurrentUser'
 
 export const metadata = {
   title: 'Airbnb',
