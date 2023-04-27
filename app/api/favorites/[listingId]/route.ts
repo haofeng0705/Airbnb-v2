@@ -19,7 +19,7 @@ export async function POST(request: Request, { params }: { params: IParams }) {
   if (!listingId || typeof listingId !== 'string') {
     throw new Error('Invalid ID')
   }
-  let favoriteIds = [...(currentUser.favorites || [])]
+  let favoriteIds = [...(currentUser.favoriteIds || [])]
 
   favoriteIds.push(listingId)
   // 更新 favorite id 数据库
@@ -48,7 +48,7 @@ export async function DELETE(
   if (!listingId || typeof listingId !== 'string') {
     throw new Error('Invalid ID')
   }
-  let favoriteIds = [...(currentUser.favorites || [])]
+  let favoriteIds = [...(currentUser.favoriteIds || [])]
   favoriteIds = favoriteIds.filter((id) => id !== listingId)
   // 更新 favorite id 数据库
   const user = await prisma.user.update({
