@@ -1,6 +1,6 @@
 # 部署地址
 
-[爱比邻克隆 v2 （需要科学上网）](hfbnb.vercel.app)
+[爱比邻克隆 v2 （需要科学上网）]([hfbnb.vercel.app](https://hfbnb.vercel.app ))
 
 # 技术栈
 
