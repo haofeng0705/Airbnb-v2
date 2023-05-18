@@ -89,5 +89,6 @@ https://hfbnb.vercel.app
 - 点击 user menu 的时候自动关闭 dropdown
 - 优化样式
 - 优化 ImageUploader 渲染卡顿的问题
+- 用 Three.js 实现一个全景看房（Feature）
 
  
