@@ -26,17 +26,17 @@ https://hfbnb.vercel.app
 
 - 主界面展示房源信息
 
-  ![image-20230427204611695](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427204611695.png)
+  ![image-20230427204611695](http://img.haofeng.wiki/image-20230427204611695.png)
 
 - 响应式布局
 
-  ![image-20230427204750433](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427204750433.png)
+  ![image-20230427204750433](http://img.haofeng.wiki/image-20230427204750433.png)
 
-  ![image-20230427204805474](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427204805474.png)
+  ![image-20230427204805474](http://img.haofeng.wiki/image-20230427204805474.png)
 
 - 登录注册界面
 
-  ![image-20230427204920157](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427204920157.png)
+  ![image-20230427204920157](http://img.haofeng.wiki/image-20230427204920157.png)
 
   支持三种方式：邮箱、Google、GIthub
 
@@ -44,7 +44,7 @@ https://hfbnb.vercel.app
 
   使用 next-auth 中间件实现路由守卫
 
-  ![image-20230427205307680](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427205307680.png)
+  ![image-20230427205307680](http://img.haofeng.wiki/image-20230427205307680.png)
 
   
 
@@ -52,29 +52,29 @@ https://hfbnb.vercel.app
 
 - 用户可以喜欢房源并预定 available 的房源
 
-  ![image-20230427205505050](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427205505050.png)
+  ![image-20230427205505050](http://img.haofeng.wiki/image-20230427205505050.png)
 
 - 房源详情界面可以看到其他房东的房源，选择日期预定
 
-  ![image-20230427210257759](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427210257759.png)
+  ![image-20230427210257759](http://img.haofeng.wiki/image-20230427210257759.png)
 
-  ![image-20230427210324036](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427210324036.png)
+  ![image-20230427210324036](http://img.haofeng.wiki/image-20230427210324036.png)
 
   
 
 - 预定完成可以访问到 Trip 页面
 
-  ![image-20230427210424111](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427210424111.png)
+  ![image-20230427210424111](http://img.haofeng.wiki/image-20230427210424111.png)
 
 - 精准搜索房源（根据 available 日期地点人数···）
 
-  ![image-20230427210531792](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427210531792.png)
+  ![image-20230427210531792](http://img.haofeng.wiki/image-20230427210531792.png)
 
-  ![image-20230427210554889](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427210554889.png)
+  ![image-20230427210554889](http://img.haofeng.wiki/image-20230427210554889.png)
 
 - 用户可以发布自己的房源信息（可以查看别的用户的预订信息，删除信息等操作）
 
-  ![image-20230427210706568](http://rts0rcjxp.hn-bkt.clouddn.com/image-20230427210706568.png)
+  ![image-20230427210706568](http://img.haofeng.wiki/image-20230427210706568.png)
 
 
 
@@ -90,5 +90,3 @@ https://hfbnb.vercel.app
 - 优化样式
 - 优化 ImageUploader 渲染卡顿的问题
 - 用 Three.js 实现一个全景看房（Feature）
-
- 
